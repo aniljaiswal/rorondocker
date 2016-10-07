@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -qq -y build-essential nodejs libpq-dev po
 ENV INSTALL_PATH /rorondocker
 RUN mkdir -p $INSTALL_PATH
 
+ENV WORKER_PROCESSES $WORKER_PROCESSES
+
 # This sets the context of where commands will be ran in and is documented
 # on Docker's website extensively.
 WORKDIR $INSTALL_PATH
